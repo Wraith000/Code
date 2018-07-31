@@ -1,0 +1,42 @@
+<html>
+    <body>
+       <script>
+           function MasterFactory()
+           {
+            var Funcouter;
+               this.create = function(type){
+                   return Funcouter[type]();
+               }
+
+
+               var Funcouter = 
+               {
+                   One : function()
+                   {
+                       return new One();
+                   },
+                   Two : function()
+                   {
+                       return new Two();
+                   }
+               }
+
+           }
+
+           function One()
+           {
+               this.pay = '1';
+           }
+           function Two()
+           {
+               this.pay = '2';
+           }
+
+           var MasterCreator = new MasterFactory();
+           var First = MasterCreator.create('One');
+           var Second = MasterCreator.create('Two');
+           console.log('First pay is '+ First.pay);
+           console.log('Second pay is '+ Second.pay);
+       </script> 
+    </body>
+</html>

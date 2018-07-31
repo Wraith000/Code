@@ -1,0 +1,50 @@
+<html>
+    <body>
+       <script>
+           function Master(MasterName) {
+               this.construct = function(builder)
+               {
+                   builder.step1();
+                   builder.step2();
+                   var ItemfromBuilder = builder.get();
+                   ItemfromBuilder.thing.creation = 'This was made by ' + ItemfromBuilder.makername + ' inside of ' + MasterName;
+                   return ItemfromBuilder.thing;
+               }
+           }
+           function ActualBuilder(makername) {
+               this.thing = null;
+               this.makername = makername;
+               
+               this.step1 = function(){
+                   this.thing = new ThingtoBuild();
+               }
+               this.step2 = function(){
+                   this.thing.create();
+               }
+               this.get = function()
+               {
+                return this;
+               }
+           }
+           
+           function ThingtoBuild()
+           {
+               this.name = '';
+               this.creation = '';
+               this.create = function(){
+                   this.name = 'Created';
+               }
+               this.log = function(){
+                   console.log(this.name)
+               }
+
+           }
+
+           var ThisGetsMeTheObject = new Master('MasterName');
+           var ThisWorksToMakeTheObject = new ActualBuilder('BuilderName');
+           var ActualThingIWant = ThisGetsMeTheObject.construct(ThisWorksToMakeTheObject);
+           ActualThingIWant.log()
+           console.log(ActualThingIWant.creation)
+       </script> 
+    </body>
+</html>

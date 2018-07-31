@@ -1,0 +1,22 @@
+<html>
+    <body>
+       <script>
+           function MasterObject(name,age){
+            this.name = name;
+            this.age = age;
+            this.boi = function(){
+                console.log('My name is ' + this.name + ' and my age is ' + this.age);
+            }
+           }
+           function FactoryforObject()
+           {
+            this.create = function(name,age){
+                return new MasterObject(name,age);
+            }
+           }
+           var FactoryObject = new FactoryforObject();
+           var MasterObject1 = FactoryObject.create('Hassam',28);
+           MasterObject1.boi();
+       </script> 
+    </body>
+</html>

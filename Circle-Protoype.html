@@ -1,0 +1,35 @@
+<html>
+<body>
+<canvas id="myCanvas" width="600" height="300" style="border:1px solid #d3d3d3;">
+</canvas>
+
+
+<script>
+function MyConstruct(size,color)
+{
+}
+MyConstruct.prototype.size = 50;
+MyConstruct.prototype.color = 'red';
+MyConstruct.prototype.draw = function(){
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(100, 75, this.size, 0, 3 * Math.PI);
+
+ctx.fillStyle = this.color;
+ctx.fill();
+ctx.stroke();
+};
+
+var Circle1 = new MyConstruct()
+Circle1.draw();
+Circle1.size = '25';
+Circle1.color = 'green';
+setTimeout(function(){Circle1.draw();},1000)
+
+MyConstruct.prototype.reset = function() {this.size = 50;this.color='red'}
+
+setTimeout(function(){Circle1.reset();Circle1.draw();},2000)
+</script>
+</body>
+</html>

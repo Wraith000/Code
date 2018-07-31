@@ -1,0 +1,41 @@
+<html>
+    <body>
+       <script>
+       function GetResults()
+       {
+           this.show = function(a,b,c)
+           {
+               return 'These are old results'
+           }
+       }
+       function GetResultsNew()
+       {
+        this.result1 = function()
+            {
+                return '1'
+            }
+        this.result2 = function()
+            {
+                return '2'
+            }
+        this.result3 = function()
+            {
+                return '3'
+            }
+       }
+       function ResultAdapter()
+       {
+           var Results = new GetResultsNew();
+            this.show = function(a,b,c)
+            {
+                return 'These are the new results ' + Results.result1() + ' ' + Results.result2() + ' '+ Results.result3();
+            }
+            
+       }
+       var GetResults = new GetResults();
+       console.log(GetResults.show(1,2,3));
+       var GetNewResults = new ResultAdapter();
+       console.log(GetNewResults.show(1,2,3))
+       </script> 
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+    <body>
+       <script>
+       function BaseQueries(){
+           this.write = function(){
+               console.log('Write');
+           }
+           this.edit = function(){
+               console.log('Edit');
+           }
+           this.delete = function(){
+               console.log('Delete');
+           }
+       }
+
+       function PSQL(base){
+           this.base = base;
+           this.up = function(){
+               base.write();
+           }
+           this.left = function(){
+               base.edit();
+           }
+           this.down = function(){
+               base.delete();
+           }
+
+       }
+       function TSQL(base){
+           this.base = base;
+           this.a = function(){
+               base.write();
+           }
+           this.b = function(){
+               base.edit();
+           }
+           this.c = function(){
+               base.delete();
+           }
+
+       }
+       var BaseLogic = new BaseQueries();
+       var Connection1 = new PSQL(BaseLogic);
+       var Connection2 = new TSQL(BaseLogic);
+       Connection1.up();
+       Connection1.left();
+       Connection1.down();
+       Connection2.a();
+       Connection2.b();
+       Connection2.c();
+
+       </script> 
+    </body>
+</html>
