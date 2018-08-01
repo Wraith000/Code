@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <script>
+            var OlderUser = function (x){
+                this.x = x; 
+                this.say = function(){
+                    return 'My asdasd is ' + this.x;
+                }
+            }
+
+            var NewUser = function (q,w,e){
+                this.old = q;
+                this.x = q.x;
+                this.w = w;
+                this.e = e;
+                this.say = function(){
+                    return 'My asdasdasd are' + this.x + this.w + this.e;
+                }
+            }
+            var A = new OlderUser('asdasd')
+            console.log(A.say());
+            var B = new NewUser(A,'qweqwe','ertert');
+            console.log(B.say())
+
+        </script>
+    </body>
+</html>
