@@ -1,0 +1,25 @@
+<html>
+    <body>
+     <script>
+         function Does()
+         {
+             this.something = function(text)
+             {
+                 return text.toUpperCase();
+             }
+         }
+         
+         function StandIn()
+         {
+             var Obj = new Does();
+             this.Capitals = function(text){
+                 return Obj.something(text);
+             }
+
+         }
+         var ProxyObj = new StandIn();
+         console.log(ProxyObj.Capitals('asasdasdasd'))
+
+     </script>
+    </body>
+</html>

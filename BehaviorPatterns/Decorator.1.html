@@ -1,0 +1,43 @@
+<html>
+    <body>
+        <script>
+            function MakeSomething(){
+                this.name="";
+                this.qwe="";
+                this.ert="";
+            }
+            MakeSomething.prototype.part1 = function(z){
+             this.name = z;
+            }
+            MakeSomething.prototype.part2 = function(z,x){
+             this.qwe = z;
+             this.ert = x;
+            }   
+            var Obj = new MakeSomething();
+            Obj.part1('asdasd')
+            Obj.part2('asdqads','ertret');
+
+            function MakeSomething2(){
+                this.name="";
+                this.qwe="";
+                this.ert="";
+            }
+            MakeSomething2.prototype.part1 = function(z){
+             this.name = z;
+             return this;
+            }
+            MakeSomething2.prototype.part2 = function(z,x){
+             this.qwe = z;
+             this.ert = x;
+             return this;
+            }
+            var Obj2 = new MakeSomething2();
+            Obj2.part1('ad').part2('aqs','ert');
+            
+            console.log(Obj)
+            console.log(Obj2)
+            
+            
+        </script>
+    </body>
+</html>

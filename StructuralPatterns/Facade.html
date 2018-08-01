@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <script>
+            function A()
+            {
+                this.Asomething = function(){
+                    console.log('A did something');
+                }
+            }
+            function B()
+            {
+                this.Bsomething = function(){
+                    console.log('B did something');
+                }
+            }
+            function C()
+            {
+                this.Csomething = function(){
+                    console.log('C did something');
+                }
+            }
+            // You can define the Facade pattern 
+            //as a piece of code that 
+            //simplifies a more complex interface.
+            function MyFacade(){
+                this.A = new A();
+                this.B = new B();
+                this.C = new C();
+                this.qwerty = function(){
+                    this.A.Asomething();
+                    this.B.Bsomething();
+                    this.C.Csomething();
+                }
+            }
+            var Object = new MyFacade();
+            Object.qwerty();
+            
+        </script>
+    </body>
+</html>
