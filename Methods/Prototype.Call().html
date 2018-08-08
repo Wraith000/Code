@@ -1,0 +1,49 @@
+<html>
+    <body>
+        <script>
+            // Using call to invoke a function and specifying the context for 'this'
+            var Person = {
+                setName : function(){
+                    return this.first + this.second;
+                }
+            };
+            var Person1 = {
+                first : "qwqwe",
+                second : "zxc"
+            }
+            console.log(Person.setName.call(Person1))
+            // Using call to invoke an anonymous function
+            debugger
+            var items = [
+  { q: 'asda', e: 'xcv' },
+  { q: 'gdfg', e: 'asdas' }
+];
+
+            for (var i = 0; i < items.length; i++) {
+            (function(i) {
+                this.print = function() {
+                console.log(this.q
+                            + ': ' + this.e);
+                }
+                this.print();
+            }).call(items[i], i);
+
+
+            }
+            var items2 = [
+  { a: 123, b: 234 },
+  { a: 3, b: 4234 }
+  ]
+            for (let index = 0; index < items2.length; index++) {
+                
+                (function (){
+                    this.sum = function(){
+                        console.log(this.a + this.b)
+                    }
+                    this.sum();
+                }).call(items2[index])
+                
+            }
+        </script>
+    </body>
+</html>

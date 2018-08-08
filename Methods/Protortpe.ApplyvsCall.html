@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <script>
+            var obj = {name:"Niladri"};
+
+var greeting = function(a,b,c){
+    return "welcome "+this.name+" to "+a+" "+b+" in "+c;
+};
+
+console.log(greeting.call(obj,"Newtown","KOLKATA","WB"));
+// The first parameter in call() method sets the "this" value, which is the object, on which the function is invoked upon. In this case, it's the "obj" object above.
+
+
+// The rest of the parameters are the arguments to the actual function.
+var obj = {name:"Niladri"};
+
+var greeting = function(a,b,c){
+    return "welcome "+this.name+" to "+a+" "+b+" in "+c;
+};
+
+// array of arguments to the actual function
+var args = ["Newtown","KOLKATA","WB"];  
+console.log("Output using .apply() below ")
+console.log(greeting.apply(obj,args));
+// Similarly to call() method the first parameter in apply() method sets the "this" value which is the object upon which the function is invoked. In this case it's the "obj" object above. The only difference of apply() with the call() method is that the second parameter of the apply() method accepts the arguments to the actual function as an array.
+        </script>
+    </body>
+</html>
