@@ -10,11 +10,20 @@ var MystyleObject = {
     }
 }
 class Header extends React.Component{
+
+    InputChangeHandler()
+    {
+        console.log('Input changed')
+
+    }
     render(){
         return (
             <header>
-                <div style={MystyleObject.Header}>Logo</div>
-                <input style={MystyleObject.Logo} className="input" type="text"/>
+                <div 
+                style={MystyleObject.Header}
+                onClick={() => {console.log('I was clicked')}}
+                >Logo</div>
+                <input style={MystyleObject.Logo} onChange={this.InputChangeHandler} className="input" type="text"/>
             </header>
             )
     }
