@@ -3,10 +3,21 @@ import ReactDom from 'react-dom';
 
 //Components
 import Header from './components/Header'
-
+var MystyleObject = {
+    Header: {
+        background:"#AA5939",
+        textAlign:"center",
+        color:"#FFFFFF",
+        paddingTop:30,
+        paddingBottom:30,
+    },
+    Logo : {
+        fontSize:"40px"
+    }
+}
 const App = () => {
     return (
-        <h1>Hello World!!! <Header/></h1>
+        <h1 style={MystyleObject.Header}>Hello World!!! <Header/></h1>
     )
 }
 
